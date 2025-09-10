@@ -19,5 +19,3 @@
 5. Login: `http://localhost:8080/LTW/login`, Register: `http://localhost:8080/LTW/Register.jsp`.
 
 **Tính năng:** Phân quyền Role, quản lý session, quản lý Category, UI responsive, Hibernate ORM tự động mapping bảng.
-
-**Liên hệ:** Huỳnh Hoài Phương – [email@example.com]
