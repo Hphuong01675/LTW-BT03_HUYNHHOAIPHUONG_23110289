@@ -1,5 +1,23 @@
-# ![LTW Logo](https://img.icons8.com/color/48/000000/user.png) LTW Project – User Management Web Application
+# LTW – User Management Web Application
 
-![Java](https://img.shields.io/badge/Java-17+-blue) ![Servlet](https://img.shields.io/badge/Servlet-Jakarta-orange) ![Hibernate](https://img.shields.io/badge/Hibernate-6.4.4.Final-green) ![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-red) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple) ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+**Mô tả:** LTW là ứng dụng web quản lý người dùng, hỗ trợ đăng nhập/đăng ký, phân quyền theo Role (Manager, Admin, User) và quản lý Category (thêm/sửa/xóa). Giao diện responsive dùng Bootstrap 5, dữ liệu lưu trên SQL Server, truy xuất bằng Hibernate JPA.
 
-**Mô tả dự án:** LTW là ứng dụng web quản lý người dùng với các tính năng đăng nhập/đăng ký, phân quyền theo Role (Manager: 1, Admin: 2, User: 3), quản lý Category (thêm, sửa, xóa) bởi người dùng có quyền, giao diện responsive sử dụng Bootstrap 5 và tương tác cơ sở dữ liệu bằng Hibernate JPA với SQL Server. **Công nghệ sử dụng:** Java 17+, Jakarta Servlet & JSP, Hibernate ORM 6.4.4.Final, SQL Server, Bootstrap 5, Maven, Eclipse/Spring Tools IDE. **Cấu trúc dự án:** `src/Controller/UserController.java`, `src/Models/User.java`, `src/Models/Category.java`, `src/Service/IUserService.java`, `src/Service/impl/UserServiceImpl.java`, `src/Utils/JpaUtil.java`, `WebContent/Views/Login.jsp`, `Register.jsp`, `ForgotPassword.jsp`, `Admin/Home.jsp`, `Manager/Home.jsp`, `User/Home.jsp`, `META-INF/persistence.xml`, `pom.xml`. **Cài đặt:** Tạo database SQL Server `LTW_TH03`, Hibernate tự động tạo bảng. Cập nhật `persistence.xml`: `<property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://HOAIPHUONG\\SQLEXPRESS01:1433;databaseName=LTW_TH03;encrypt=false"/><property name="jakarta.persistence.jdbc.user" value="username"/><property name="jakarta.persistence.jdbc.password" value="password"/><property name="hibernate.hbm2ddl.auto" value="update"/><property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"/>`. **Build project:** `mvn clean install`. **Deploy:** Chạy trên Tomcat 9+ với context path `/LTW`. **Sử dụng:** Login `http://localhost:8080/LTW/login`, hệ thống phân quyền tự động: Manager → `/Manager/Home.jsp`, Admin → `/Admin/Home.jsp`, User → `/User/Home.jsp`. Register tại `http://localhost:8080/LTW/Register.jsp`. Quản lý Category chỉ cho user có quyền với thông tin: `name`, `description`, `image`, `byUserId`. **Tính năng nổi bật:** phân quyền theo Role, session management, Bootstrap responsive UI, Hibernate ORM mapping bảng và query dễ dàng. **Lưu ý:** SQL Server chạy trên cổng 1433, cho phép remote connections, cập nhật `persistence.xml` nếu server/username/password khác, xem log Hibernate để debug. **Liên hệ:** Huỳnh Hoài Phương – [email@example.com]. **Screenshots placeholder:** `screenshots/login.png`, `screenshots/register.png`, `screenshots/admin_home.png`, `screenshots/manager_home.png`, `screenshots/user_home.png`, `screenshots/category.png`.
+**Công nghệ:** Java 17+, Jakarta Servlet & JSP, Hibernate ORM, SQL Server, Bootstrap 5, Maven.
+
+**Cấu trúc chính:** 
+- `Controller/` – xử lý request
+- `Models/` – User, Category
+- `Service/` – logic nghiệp vụ
+- `WebContent/Views/` – giao diện JSP
+- `META-INF/persistence.xml` – cấu hình DB
+
+**Cài đặt & chạy:** 
+1. Tạo DB SQL Server `LTW_TH03`.
+2. Cập nhật `persistence.xml` với username/password.
+3. Build: `mvn clean install`.
+4. Deploy trên Tomcat 9+ với context `/LTW`.
+5. Login: `http://localhost:8080/LTW/login`, Register: `http://localhost:8080/LTW/Register.jsp`.
+
+**Tính năng:** Phân quyền Role, quản lý session, quản lý Category, UI responsive, Hibernate ORM tự động mapping bảng.
+
+**Liên hệ:** Huỳnh Hoài Phương – [email@example.com]
